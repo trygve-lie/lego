@@ -36,7 +36,7 @@ var Router = module.exports = function (config) {
     this.router.set('views', path.resolve(__dirname, '../views/'));
 
 
-    this.router.get('/module-b/:tag', function (req, res, next) {
+    this.router.get('/component-b/:tag', function (req, res, next) {
         res.render('component', {
             tag: req.params.tag
         });
