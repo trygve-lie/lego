@@ -1,0 +1,42 @@
+{
+  "name": "server-micro-a",
+  "version": "1.0.0",
+  "author": {
+    "name": "Trygve Lie",
+    "email": "post@trygve-lie.com"
+  },
+  "description": "Micro server a",
+  "main": "./bin/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:trygve-lie/lego.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "scripts": {
+    "start": "node ./bin/server.js | bistre"
+  },
+  "contributors": [
+    {
+      "name": "Trygve Lie",
+      "email": "post@trygve-lie.com"
+    }
+  ],
+  "engines": {
+    "node" : "5.x"
+  },
+  "bugs": {
+    "url": "https://github.com/trygve-lie/lego/issues"
+  },
+  "licenses": ["MIT"],
+  "dependencies": {
+    "bole": "2.x",
+    "bistre": "1.x",
+    "numbat-emitter": "2.x",
+    "convict": "1.x",
+    "express": "4.x",
+    "serve-static": "1.x",
+    "compression": "1.x"
+  }
+}

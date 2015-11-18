@@ -1,0 +1,40 @@
+{
+  "name": "server-metrics",
+  "version": "1.0.0",
+  "author": {
+    "name": "Trygve Lie",
+    "email": "post@trygve-lie.com"
+  },
+  "description": "Collect interesting metrics",
+  "main": "./bin/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:trygve-lie/lego.git"
+  },
+  "keywords": [
+    "test",
+    "metrics"
+  ],
+  "scripts": {
+    "start": "node ./bin/server.js | bistre"
+  },
+  "contributors": [
+    {
+      "name": "Trygve Lie",
+      "email": "post@trygve-lie.com"
+    }
+  ],
+  "engines": {
+    "node" : "5.x"
+  },
+  "bugs": {
+    "url": "https://github.com/trygve-lie/lego/issues"
+  },
+  "licenses": ["MIT"],
+  "dependencies": {
+    "bole": "2.x",
+    "convict": "1.x",
+    "bistre": "1.x",
+    "numbat-collector": "1.x"
+  }
+}
