@@ -1,12 +1,12 @@
 {
-  "name": "server-micro-a",
+  "name": "micro-a",
   "version": "1.0.0",
   "author": {
     "name": "Trygve Lie",
     "email": "post@trygve-lie.com"
   },
   "description": "Micro server a",
-  "main": "./bin/server.js",
+  "main": "./lib/main.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:trygve-lie/lego.git"
@@ -33,10 +33,13 @@
   "dependencies": {
     "bole": "2.x",
     "bistre": "1.x",
+    "express-error-responses": "0.2.x",
     "numbat-emitter": "2.x",
     "convict": "1.x",
     "express": "4.x",
     "serve-static": "1.x",
-    "compression": "1.x"
+    "compression": "1.x",
+    "hbs": "4.x",
+    "joi": "7.x"
   }
 }

@@ -2,17 +2,19 @@
 
 "use strict";
 
-const   url             = require('url'),
-        http            = require('http'),
+const   http            = require('http'),
         bole            = require('bole'),
 
+        parameters      = require('./parameters.js'),
         config          = require('./config.js'),
-//        errors          = require('./errors.js'),
-//        routes          = require('./routes.js'),
+        errors          = require('express-error-responses/lib/middleware.js'),
+        routes          = require('./routes.js'),
 
         express         = require('express'),
         compress        = require('compression')(),
         serveStatic     = require('serve-static'),
+
+        Component       = require('../lib/main.js'),
 
         app             = express(),
         log             = bole('app');
@@ -28,45 +30,51 @@ bole.output({
 
 
 
+// Set up component that this server serves
+
+const component = new Component();
+
+
+
 // Configure application
 
 app.disable('x-powered-by');
 app.enable('trust proxy');
-
-
-
-// Set middleware
-
 app.use(compress);
-app.use(serveStatic(config.get('docRoot')));
 
 
 
-// Set up routes
+// Validate URL parameters
 
-// app.get('/admin/ping', routes.ping);
+app.param('publication', parameters.publication);
 
 
 
-// Attach routers 
+// Serve server specific static files
 
-// app.use('/', api.routes);
+app.use(config.get('publicPath') + '/:publication', serveStatic(config.get('docRoot')));
+
+
+
+// Set up server specific routes
+
+app.get(config.get('contextPath') + '/apiadmin/ping', routes.ping);
+
+
+
+// Attach the component router
+
+app.use(config.get('publicPath') + '/:publication', component.router);
 
 
 
 // Error handling
 
-// app.use(errors.response);
-// app.use(errors.status404);
+app.use(errors.response);
+app.use(errors.status404);
 
 
 
-// Set up http server
+// Set up and export http server
 
-const httpServer = http.createServer(app);
-
-
-
-// Export application
-
-module.exports = httpServer;
+const httpServer = module.exports = http.createServer(app);

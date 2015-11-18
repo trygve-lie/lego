@@ -39,6 +39,18 @@ env: {
         arg     : "port"
     },
 
+    contextPath: {
+        doc     : "The prefix for all routes intended to only be accessed by other servers",
+        format  : String,
+        default : "/" + pckage.name
+    },
+
+    publicPath: {
+        doc     : "The route the application is served on. This is the route the end user access in the browser",
+        format  : String,
+        default : "/public"
+    },
+
     docRoot: {
         doc     : "Document root for static files to be served by the http server",
         format  : String,
