@@ -31,3 +31,16 @@ numbat.on('close', function () {
 numbat.on('ready', function () { 
     log.info('opened connection to metrics server');
 });
+
+
+const heartbeatTimer = setInterval(function heartbeat () {
+    numbat.metric({ name: 'heartbeat', ttl: 16000 });
+}, 15000);
+
+
+const resourcesTimer = setInterval(function resources () {
+    var mem = process.memoryUsage();
+    numbat.metric({ name: 'memory.rss', value: mem.rss });
+    numbat.metric({ name: 'memory.heapTotal', value: mem.heapTotal });
+    numbat.metric({ name: 'memory.heapUsed', value: mem.heapUsed });
+}, 30000);
