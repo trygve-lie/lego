@@ -9,6 +9,7 @@ const   http            = require('http'),
         config          = require('./config.js'),
         errors          = require('express-error-responses/lib/middleware.js'),
         routes          = require('./routes.js'),
+        assets          = require('./assets.js'),
 
         express         = require('express'),
         compress        = require('compression')(),
@@ -59,6 +60,8 @@ app.use(config.get('publicPath') + '/:publication', serveStatic(config.get('docR
 // Set up server specific routes
 
 app.get(config.get('contextPath') + '/apiadmin/ping', routes.ping);
+app.get(config.get('publicPath') + '/assets/main.js', assets.js);
+app.get(config.get('publicPath') + '/assets/main.json', assets.json);
 
 
 

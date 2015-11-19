@@ -7,6 +7,7 @@ const   bole        = require('bole'),
         log         = bole('routes');
 
 
+
 /** 
   * Route ping responses
   *
@@ -15,6 +16,6 @@ const   bole        = require('bole'),
   * @param {function} next Next function in the route
   */
 
-module.exports.ping = function(req, res, next) {
+module.exports.ping = function (req, res, next) {
     res.status(200).send('OK');
 };

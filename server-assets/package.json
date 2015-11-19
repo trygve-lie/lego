@@ -1,11 +1,11 @@
 {
-  "name": "micro-a",
+  "name": "assets",
   "version": "1.0.0",
   "author": {
     "name": "Trygve Lie",
     "email": "post@trygve-lie.com"
   },
-  "description": "Micro server a",
+  "description": "Bundles assets from microservices over http",
   "main": "./lib/main.js",
   "repository": {
     "type": "git",
@@ -41,11 +41,13 @@
     "compression": "1.x",
     "hbs": "4.x",
     "joi": "7.x",
+    "request": "2.67.0",
     "through2": "2.0.0",
     "shasum": "1.0.2",
     "module-deps": "4.0.2",
     "JSONStream": "1.0.7",
     "browser-pack": "6.0.1",
-    "eventemitter3": "1.1.1"
+    "merge-stream": "1.0.0",
+    "deps-sort": "2.0.0"
   }
 }

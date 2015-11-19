@@ -9,13 +9,10 @@ const   http            = require('http'),
         config          = require('./config.js'),
         errors          = require('express-error-responses/lib/middleware.js'),
         routes          = require('./routes.js'),
-        assets          = require('./assets.js'),
 
         express         = require('express'),
         compress        = require('compression')(),
         serveStatic     = require('serve-static'),
-
-        Component       = require('../lib/main.js'),
 
         app             = express(),
         log             = bole('app');
@@ -28,12 +25,6 @@ bole.output({
     level: config.get('logConsoleLevel'),
     stream: process.stdout
 });
-
-
-
-// Set up component that this server serves
-
-const component = new Component();
 
 
 
@@ -60,14 +51,9 @@ app.use(config.get('publicPath') + '/:publication', serveStatic(config.get('docR
 // Set up server specific routes
 
 app.get(config.get('contextPath') + '/apiadmin/ping', routes.ping);
-app.get(config.get('publicPath') + '/assets/main.js', assets.js);
-app.get(config.get('publicPath') + '/assets/main.json', assets.json);
-
-
-
-// Attach the component router
-
-app.use(config.get('publicPath') + '/:publication', component.router);
+app.get(config.get('publicPath') + '/assets/microa/main.js', routes.assetsA);
+app.get(config.get('publicPath') + '/assets/microb/main.js', routes.assetsB);
+app.get(config.get('publicPath') + '/assets/bundle/main.js', routes.assetsAB);
 
 
 

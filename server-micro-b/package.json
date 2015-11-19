@@ -40,6 +40,12 @@
     "serve-static": "1.x",
     "compression": "1.x",
     "hbs": "4.x",
-    "joi": "7.x"
+    "joi": "7.x",
+    "through2": "2.0.0",
+    "shasum": "1.0.2",
+    "module-deps": "4.0.2",
+    "JSONStream": "1.0.7",
+    "browser-pack": "6.0.1",
+    "eventemitter3": "1.1.1"
   }
 }
