@@ -1,0 +1,13 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "server-assets/package.json",
+        "server-bundeled/package.json",
+        "server-metrics/package.json",
+        "server-micro-a/package.json",
+        "server-micro-b/package.json"
+      ]
+    }
+  }
+}
