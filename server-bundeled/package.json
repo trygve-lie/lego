@@ -31,15 +31,15 @@
   },
   "licenses": ["MIT"],
   "dependencies": {
-    "bole": "2.x",
+    "bole": "^3.0.2",
     "bistre": "1.x",
-    "express-error-responses": "0.2.x",
-    "numbat-emitter": "2.x",
-    "convict": "1.x",
-    "express": "4.x",
-    "serve-static": "1.x",
-    "compression": "1.x",
-    "hbs": "4.x",
-    "joi": "7.x"
+    "express-error-responses": "~0.3.0",
+    "numbat-emitter": "^5.0.2",
+    "convict": "^4.4.0",
+    "express": "4.16.3",
+    "serve-static": "1.13.2",
+    "compression": "1.7.3",
+    "hbs": "4.0.1",
+    "joi": "^13.7.0"
   }
 }
