@@ -32,8 +32,8 @@
   },
   "licenses": ["MIT"],
   "dependencies": {
-    "bole": "2.x",
-    "convict": "1.x",
+    "bole": "^3.0.2",
+    "convict": "^4.4.0",
     "bistre": "1.x",
     "numbat-collector": "1.x"
   }
